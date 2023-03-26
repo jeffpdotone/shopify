@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start:middleware": "tsx middleware.ts",
+    "start:middleware:dev": "tsx watch middleware.ts"
+  },
+  "devDependencies": {
+    "nuxt": "^3.3.2"
+  },
+  "dependencies": {
+    "@vuestorefront/shopify-api": "workspace:*"
+  }
+}

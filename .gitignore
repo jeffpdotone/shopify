@@ -1,42 +1,33 @@
-lib
-server
-middleware.config.js
-.nuxt
-_theme
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
 node_modules
-.history
-package-json.lock
-sw.js
-.env
-# Logs
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# next.js
+.next/
+out/
+build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
+.pnpm-debug.log*
 
-# NPM config
-.npmrc
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Yarn Integrity file
-.yarn-integrity
-
-# Rollup generate output
-lib
-
-# Coverage directory used by tools like istanbul
-coverage
-
-# Editor directories and files
-.idea
-.vscode
-
-# OS generated files
-.DS_STORE
-
-!scripts/lib
-
-packages/theme/.template
-
-tests/e2e/report
-
-docs/.vuepress/dist
+# turbo
+.turbo

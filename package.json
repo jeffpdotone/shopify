@@ -1,68 +1,25 @@
 {
-  "name": "vuestorefront-next-shopify-integration",
+  "name": "shopify",
+  "version": "0.0.0",
   "private": true,
-  "license": "MIT",
-  "engines": {
-    "node": ">=10.x"
-  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "build": "lerna run build --stream",
-    "build:deps": "lerna run build --ignore @vue-storefront/shopify-theme --include-dependencies",
-    "build:api-client": "cd packages/api-client && yarn build",
-    "build:composables": "cd packages/composables && yarn build",
-    "build:apollo": "cd packages/apollo && yarn build",
-    "build:theme": "cd packages/theme && yarn build",
-    "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate",
-    "dev": "yarn dev:deps && yarn dev:theme",
-    "dev:deps": "lerna exec --parallel yarn dev",
-    "dev:theme": "cd packages/theme && yarn dev",
-    "docs:build": "cd docs && yarn build",
-    "docs:dev": "cd docs && yarn dev",
-    "docs:install": "cd docs && yarn",
-    "lint": "eslint . --ext .ts,.vue",
-    "publish:apollo": "node ./scripts/publishApollo.js",
-    "publish:api-client": "node ./scripts/publishApi.js",
-    "publish:composables": "node ./scripts/publishComposable.js",
-    "start": "cd packages/theme && yarn start",
-    "test": "yarn test:apollo && yarn test:api-client && yarn test:composables && yarn test:theme",
-    "test:apollo": "cd packages/apollo && yarn test --passWithNoTests",
-    "test:api-client": "cd packages/api-client && yarn test --passWithNoTests",
-    "test:composables": "cd packages/composables && yarn test --passWithNoTests",
-    "test:theme": "cd packages/theme && yarn test --passWithNoTests",
-    "update:check": "ncu && lerna run update:check --stream",
-    "update:update": "ncu -u && lerna run update:update --stream && yarn install --force",
-    "generate:template": "cd packages/theme && rimraf ./.template && npx @vue-storefront/cli generate-template .template",
-    "prepare": "husky install"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "start:middleware:dev": "turbo run start:middleware:dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
-    "@commitlint/config-lerna-scopes": "^13.1.0",
-    "@nuxtjs/eslint-config-typescript": "^8.0.0",
-    "@types/jest": "^27.0.0",
-    "@types/node": "^16.6.0",
-    "all-contributors-cli": "^6.20.0",
-    "commitizen": "^4.2.4",
-    "concurrently": "^6.2.1",
-    "eslint": "^8.3.0",
-    "eslint-config-prettier": "^8.3.0",
-    "husky": "^7.0.0",
-    "jest": "^27.4.3",
-    "lerna": "^4.0.0",
-    "lint-staged": "^11.1.2",
-    "npm-check-updates": "^11.8.3",
-    "prettier": "^2.4.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.56.2",
-    "rollup-plugin-typescript2": "^0.31.0",
-    "ts-jest": "^27.0.4",
-    "ts-node": "^10.2.0",
-    "tslib": "^2.3.1",
-    "typescript": "~4.2"
+    "prettier": "latest",
+    "tsx": "^3.12.6",
+    "turbo": "latest"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@7.28.0"
 }
